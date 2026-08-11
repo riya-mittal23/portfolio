@@ -52,11 +52,10 @@ export function Header({ activeSection, setActiveSection }: HeaderProps) {
   return (
     <header
       id="site-header"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? "bg-white/85 dark:bg-neutral-950/85 backdrop-blur-md shadow-sm border-b border-neutral-100 dark:border-neutral-900"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
@@ -71,7 +70,7 @@ export function Header({ activeSection, setActiveSection }: HeaderProps) {
               <Code2 className="w-5 h-5 sm:w-6 sm:h-6" id="header-logo-icon" />
             </div>
             <span className="font-display font-extrabold text-lg sm:text-xl tracking-tight text-neutral-900 dark:text-neutral-50">
-              RIYA<span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-purple-400 font-black">.</span>
+              RIYA
             </span>
           </motion.div>
 
@@ -170,11 +169,10 @@ export function Header({ activeSection, setActiveSection }: HeaderProps) {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
                     onClick={() => handleNavClick(item.id)}
-                    className={`block w-full text-left px-4 py-3 rounded-xl text-base font-semibold transition-all ${
-                      isActive
+                    className={`block w-full text-left px-4 py-3 rounded-xl text-base font-semibold transition-all ${isActive
                         ? "bg-neutral-100 dark:bg-neutral-900 text-brand-500"
                         : "text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-900/60"
-                    }`}
+                      }`}
                   >
                     {item.label}
                   </motion.button>

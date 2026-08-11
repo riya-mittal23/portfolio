@@ -112,13 +112,13 @@ function MainApp() {
       {/* Footer */}
       <footer className="bg-white dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-800/80 py-10 transition-colors text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-          
+
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-brand-500 flex items-center justify-center text-white text-xs font-black">
-              R.
+              R
             </div>
             <span className="font-display font-extrabold text-lg text-neutral-900 dark:text-neutral-50">
-              RIYA<span className="text-brand-500 animate-pulse">.</span>
+              RIYA
             </span>
           </div>
 
@@ -127,9 +127,9 @@ function MainApp() {
               <span>Riya's Portfolio — All rights reserved</span>
               <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 shrink-0" />
             </p>
-            <p className="font-mono text-[11px] text-neutral-400">
+            {/* <p className="font-mono text-[11px] text-neutral-400">
               Built with React, Vite, Tailwind CSS & Framer Motion
-            </p>
+            </p> */}
           </div>
 
         </div>
