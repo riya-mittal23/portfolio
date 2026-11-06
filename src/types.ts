@@ -6,16 +6,20 @@ export interface Experience {
   period: string;
   bullets: string[];
   skills: string[];
+  type?: "full-time" | "client-engagement" | "internship";
+  client?: string;
+  highlights?: string[];
 }
 
 export interface Project {
   id: string;
   name: string;
   tagline: string;
-  category: "fintech" | "iot" | "ecommerce" | "platform" | "other";
+  category: "fintech" | "iot" | "ecommerce" | "platform" | "ai" | "other";
   technologies: string[];
   bullets: string[];
   metrics: string[];
+  client?: string;
 }
 
 export interface Education {

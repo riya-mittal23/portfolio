@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Sun, Moon, Menu, X, Code2 } from "lucide-react";
+import { Sun, Moon, Menu, X, Code2, Linkedin, Github } from "lucide-react";
 import { useTheme } from "./ThemeContext";
+import { PERSONAL_INFO } from "../data";
 
 interface HeaderProps {
   activeSection: string;
@@ -63,15 +64,20 @@ export function Header({ activeSection, setActiveSection }: HeaderProps) {
           <motion.div
             initial={{ opacity: 0, x: -15 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-2 cursor-pointer"
+            className="flex items-center gap-2.5 cursor-pointer"
             onClick={() => handleNavClick("hero")}
           >
             <div className="w-10 h-10 bg-gradient-to-br from-brand-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-brand-500/25 text-white shrink-0">
               <Code2 className="w-5 h-5 sm:w-6 sm:h-6" id="header-logo-icon" />
             </div>
-            <span className="font-display font-extrabold text-lg sm:text-xl tracking-tight text-neutral-900 dark:text-neutral-50">
-              RIYA
-            </span>
+            <div className="flex flex-col text-left">
+              <span className="font-display font-extrabold text-lg sm:text-xl tracking-tight text-neutral-900 dark:text-neutral-50 leading-tight">
+                RIYA
+              </span>
+              <span className="text-[10px] font-mono text-neutral-500 dark:text-neutral-400 font-semibold tracking-wider">
+                Full-Stack Dev
+              </span>
+            </div>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -101,14 +107,34 @@ export function Header({ activeSection, setActiveSection }: HeaderProps) {
             })}
           </nav>
 
-          {/* Utilities (Theme Switcher & Mobile Menu Toggle) */}
+          {/* Utilities (Social links, Theme Switcher & Mobile Menu Toggle) */}
           <div className="flex items-center gap-2">
+            <a
+              href={PERSONAL_INFO.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex p-2.5 rounded-xl border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors"
+              title="LinkedIn"
+            >
+              <Linkedin className="w-4 h-4" />
+            </a>
+
+            <a
+              href={PERSONAL_INFO.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex p-2.5 rounded-xl border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors"
+              title="GitHub"
+            >
+              <Github className="w-4 h-4" />
+            </a>
+
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={toggleTheme}
               id="theme-toggle-btn"
               className="p-2.5 rounded-xl border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors cursor-pointer"
-              title="Toggle design mode"
+              title="Toggle theme"
             >
               <AnimatePresence mode="wait" initial={false}>
                 {theme === "dark" ? (
@@ -178,6 +204,28 @@ export function Header({ activeSection, setActiveSection }: HeaderProps) {
                   </motion.button>
                 );
               })}
+              
+              <div className="pt-4 flex items-center gap-3 px-4">
+                <a
+                  href={PERSONAL_INFO.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400"
+                >
+                  <Linkedin className="w-4 h-4" />
+                  <span>LinkedIn</span>
+                </a>
+                <span className="text-neutral-300 dark:text-neutral-700">•</span>
+                <a
+                  href={PERSONAL_INFO.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm font-semibold text-neutral-800 dark:text-neutral-200"
+                >
+                  <Github className="w-4 h-4" />
+                  <span>GitHub</span>
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
